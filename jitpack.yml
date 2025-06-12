@@ -1,3 +1,2 @@
 install:
-- FILE="-Dfile=nav-ui-1.0.4.aar"
-- mvn install:install-file $FILE DgroupId=com.nav.ui -DartifactId=nav-ui-sdk -Dversion=1.0.4 -Dpackaging=aar -DpomFile=pom.xml
+- mvn install:install-file -Dfile=nav-ui-1.0.4.aar -DgroupId=com.nav.ui -DartifactId=nav-ui-sdk -Dversion=1.0.5 -Dpackaging=aar -DpomFile=pom.xml
