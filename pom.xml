@@ -1,28 +1,48 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.nav.ui</groupId>
-    <artifactId>nav-ui-sdk</artifactId>
-    <version>1.0.4</version>
-    <name>nav-ui-sdk</name>
-    <packaging>aar</packaging>
-    <build>
-        <plugins>
-        <plugin>
-            <groupId>com.simpligility.maven.plugins</groupId>
-            <artifactId>android-maven-plugin</artifactId>
-            <version>4.1.0</version>
-            <extensions>true</extensions>
-            <configuration>
-            <encoding>utf8</encoding>
-            <source>1.8</source>
-            <target>1.8</target>
-            <sign>
-                <debug>false</debug>
-            </sign>
-            </configuration>
-        </plugin>
-        </plugins>
-    </build>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.nav.service</groupId>
+  <artifactId>nav-service-sdk</artifactId>
+  <version>1.0.4</version>
+  <name>nav-service-sdk</name>
+  <packaging>aar</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <android.sdk.platform>33</android.sdk.platform> <!-- API level -->
+  </properties>
+
+  <dependencies>
+    <!-- Add AndroidX Annotation (Fixes compile error on JitPack) -->
+    <dependency>
+      <groupId>androidx.annotation</groupId>
+      <artifactId>annotation</artifactId>
+      <version>1.6.0</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.simpligility.maven.plugins</groupId>
+        <artifactId>android-maven-plugin</artifactId>
+        <version>4.1.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <sdk>
+            <platform>${android.sdk.platform}</platform>
+          </sdk>
+          <encoding>utf8</encoding>
+          <source>1.8</source>
+          <target>1.8</target>
+          <sign>
+            <debug>false</debug>
+          </sign>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
